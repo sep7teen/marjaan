@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Module</title>
+    <link rel="stylesheet" href="new company module.css">
+    <link rel="stylesheet" href="button.css">
+</head>
+
+<body>
+   
+    <main>
+        <div class="form-container">
+            <div class="header">
+                <h2>Company Module</h2>
+            </div>
+            <form>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for = "company_id">Company ID ( * ) </label>
+                        <div class="search-container">
+                            <input type="text" placeholder="Enter or search Company ID" name="company_id" id="company_id">
+                            <button type="button" class="search-btn">🔍</button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for = "company_name">Company Name ( * )</label>
+                        <input type="text" name="company_name" id="company_name">
+                    </div>
+
+                    <div class="input-group">
+                        <label for ="address">Registered Address</label>
+                        <input type="text" name="address" id="address" class="big_input">
+                    </div>
+
+                    <div class="input-group">
+                        <label for ="phone_1">Phone No. 1</label>
+                        <input type="tel" name="phone_1" id="phone_1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for ="phone_2">Phone No. 2</label>
+                        <input type="tel" name="phone_2" id="phone_2">
+                    </div>
+
+                    <div class="input-group">
+                        <label for ="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+
+                    <div class="input-group">
+                        <label for ="website">Website</label>
+                        <input type="url" name="website" id="website">
+                    </div>
+
+                    <div class="input-group">
+                        <label for ="company_type">Company Type</label>
+                        <select>
+                            <option disabled selected>Please select</option>
+                            <option>Individual</option>
+                            <option>Partnership</option>
+                            <option>Company</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for ="ntn">NTN</label>
+                        <input type="text"name="ntn" id="ntn">
+                    </div>
+
+                    <div class="input-group">
+                        <label for ="strn">STRN (VAT)</label>
+                        <input type="text"name="strn" id="strn">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for ="fiscal_start_date">Fiscal Start Date</label>
+                        <input type="date"name="fiscal_start_date" id="fiscal_start_date">
+                    </div>
+
+                    <div class="input-group">
+                        <label for ="company_logo">Company Logo</label>
+                        <div class="logo-upload" onclick="document.getElementById('logo-input').click()">
+                            <div id="logo-text">Click to upload logo<br>(JPG/PNG only, max size: 2MB)</div>
+                            <div id="logo-preview" class="selected-file"></div>
+                            <input type="file" name ="logo-input" id="logo-input" accept="image/jpeg, image/png" hidden>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-new" role="button">New</button>
+                    <button type="button" class="btn btn-save" role="button">Save</button>
+                    <button type="button" class="btn btn-edit" role="button">Edit</button>
+                    <button type="button" class="btn btn-delete" role="button">Delete</button>
+                    <button type="button" class="btn btn-print" role="button">Print</button>
+                    <button type="button" class="btn btn-exit" role="button">Exit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">Powered by<a href="#"> sep7teen.com</a></footer>
+    <script>
+        // Handle logo upload
+        const logoInput = document.getElementById('logo-input');
+        const logoPreview = document.getElementById('logo-preview');
+        const logoText = document.getElementById('logo-text');
+
+        logoInput.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('File size exceeds 2MB');
+                    return;
+                }
+                logoText.style.display = 'none';
+                logoPreview.innerHTML = `Selected: ${file.name}`;
+
+                // For image preview (optional):
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '200px';
+                    logoPreview.innerHTML = '';
+                    logoPreview.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+
+</html>
