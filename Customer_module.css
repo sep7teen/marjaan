@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lilita+One&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    min-height: 100vh;
+
+}
+
+header,
+footer {
+    background:black;
+    color: white;
+    padding: 0.1rem;
+    text-align: center;
+    flex-shrink: 0;
+
+}
+
+.headerimg{
+    display: flex;
+    margin-left: 25px;
+}
+
+img{
+    max-width: 150px;
+    
+}
+
+footer {
+    margin-top: auto;
+}
+
+footer {
+    color: goldenrod;
+
+
+}
+
+footer a {
+    color: white;
+    padding: 5px
+}
+
+/*.menu {
+    background: rgb(128, 128, 128);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}*/
+
+
+.header {
+    background-color: #000;
+    color: goldenrod;
+    padding: 0.5rem;
+    margin-bottom: 4vh;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 'Kanit'(1.8rem, 2vw, 1.8rem);
+    width: 106%;
+    margin-left: -3%
+}
+
+.form-container {
+    width: 90%;
+    max-width: 2400px;
+    margin: 4rem auto;
+    background: white;
+    padding: 0rem 3rem 1rem 3rem;
+    /*clock wise*/
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    flex-grow: 1;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2vh 1.5vw;
+    margin-bottom: 2vh;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.input-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+}
+
+.input-group input,
+.input-group select {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    width: 100%;
+}
+
+.search-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.search-container input {
+    flex: 1;
+    min-width: 50px;
+}
+
+.search-btn {
+    background: goldenrod;
+    border: none;
+    color: white;
+    padding: 0 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+}
+
+
+.logo-upload {
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    /* Combined horizontal & vertical spacing */
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: clamp(1rem, 1.2vw, 1rem);
+    flex: 3 1 200px;
+    min-width: 150px;
+    max-width: 200px;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .form-container {
+        padding: 2rem;
+        width: 95%;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+
+    body {
+        padding: 1rem;
+    }
+
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+
+    .btn {
+        flex: 1 1 45%;
+        /* Two buttons per row */
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        max-width: 120px;
+        width: 100%;
+        flex-basis: 30%;
+
+
+    }
+
+    .logo-upload {
+        min-height: 100px;
+    }
+}
+
+.selected-file {
+    color: goldenrod;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-btn {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
+
+.selected-file {
+    color: goldenrod;
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+    word-break: break-all;
+}
+
+.btn {
+    flex: 1 1;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    max-width: 400px;
+    width: 100%;
+    flex-basis: 30%;
+}
