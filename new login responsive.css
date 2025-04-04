@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lilita+One&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'kanit', sans-serif;
+}
+
+.login-container {
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    /* Maximum width for the form */
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+.login-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+    font-size: 2rem;
+    color: #6200ea;
+    margin-bottom: 20px;
+}
+
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 1.25rem;
+    color: brown;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    outline: none;
+    font-family: kanit, sans-serif;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 10px goldenrod;
+    outline: none;
+}
+
+/* Hide default checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+}
+
+
+/* Checkmark (using pseudo-element) */
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+
+
+}
+
+.remember-me {
+    display: flex;
+    color: red;
+    font-family: kanit, sans-serif;
+
+
+}
+
+.remember-me label {
+    margin-left: 8px;
+}
+
+.btn-submit {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #6200ea;
+    transition: all 1000ms;
+    font-size: 15px;
+    font-family: kanit, sans-serif;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid gold;
+    
+  }
+  
+  button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid gold;
+    box-shadow: 4px 5px 17px -4px #6200ea;
+  }
+  
+  button::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #6200ea;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+  
+  button:hover::before {
+    width: 250%;
+  }
+  
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .login-container {
+        width: 80%;
+    }
+
+    .logo {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+    }
+
+    .logo {
+        max-width: 70%;
+    }
+
+    .login-form {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .input-group input {
+        padding: 8px;
+    }
+
+    .btn-submit {
+        font-size: 1rem;
+    }
+}
